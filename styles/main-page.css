@@ -1,0 +1,622 @@
+/* ------------------ HERO SECTION ------------------ */
+.hero-section {
+    display: flex;
+    position: relative;
+    width: 92%;
+    height: 680px;
+    align-items: center;
+    justify-content: center;
+    margin: 44px auto;
+}
+.visible{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.carousell-track {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.5s ease-in-out
+}
+.carousell-item {
+    display: flex;
+    position: relative;
+    width: 92%;
+    height: 680px;
+    flex-shrink: 0;
+    min-width: 100%;
+}
+.carousell-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousell-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 30%;
+}
+.carousell-text span {
+    display: block;
+    width: 100%;
+    font-family: 'cartograph', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.carousell-text h1 {
+    font-family: 'Simula';
+    font-size: 64px;
+    margin-bottom: 24px;
+}
+.car-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--green);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      transition: all 0.2s ease;
+
+}
+.car-nav-button:hover {
+    background-color: var(--pink);
+    transform: scale(1.05) translateY(-50%);
+    top: 50%;
+}
+#hero-section-back-button {
+    left: -35px;
+}
+#hero-section-next-button {
+    right: -35px;
+}
+.hero-section .call-to-action-button {
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--green);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cartograph', monospace;
+    font-size: 20px;
+    font-weight: 500;
+      transition: all 0.2s ease;
+}
+.hero-section .call-to-action-button:hover {
+    background-color: var(--pink);
+    transform: scale(1.05)  translateX(-50%);
+}
+.hero-section .call-to-action-button a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1125px) {
+    .hero-section {
+        height: 500px;
+    }
+    .carousell-text {
+        max-width: 80%;
+    }
+    .carousell-text h1 {
+        font-size: 36px;
+    }
+    .carousell-text span {
+        font-size: 14px;
+    }
+    .car-nav-button {
+        width: 50px;
+        height: 50px;
+    }
+    #hero-section-back-button{
+        left: 5px;
+        transition: all 0.2s ease;
+    }
+    #hero-section-next-button{
+        right: 5px;
+        transition: all 0.2s ease;
+    }
+    .hero-section .call-to-action-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+  
+}
+
+@media (max-width: 670px) {
+    .hero-section {
+        height: 400px;
+    }
+    .carousell-text {
+        max-width: 80%;
+    }
+    .carousell-text h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+
+    }
+    .carousell-text span {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .car-nav-button {
+        width: 30px;
+        height: 30px;
+    }
+    .car-nav-button img {
+        width: 15px;
+        height: 15px;
+    }
+    #hero-section-back-button{
+        left: 5px;
+        transition: all 0.2s ease;
+    }
+    #hero-section-next-button{
+        right: 5px;
+        transition: all 0.2s ease;
+    }
+    .hero-section .call-to-action-button {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+  
+}
+
+
+/* ------------------ BRANDS LINE ------------------ */
+.brands-line {
+  overflow: hidden;
+  position: relative;
+  background: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.brands-track {
+  display: flex;
+  gap: 38px;
+  animation: scrollBrands 20s linear infinite;
+}
+
+.brands-track img {
+  height: 30px;
+  flex-shrink: 0;
+}
+
+@keyframes scrollBrands {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1125px) {
+  .brands-line {
+    height: 50px;
+  }
+  .brands-track img {
+    height: 20px;
+  }
+}
+
+
+
+/* ------------------ INTRO SECTION ------------------ */
+.intro-section {
+      text-align: center;
+      position: relative;
+      height: 680px;
+      width: 100%;
+      margin-bottom: 156px;
+      display: flex;
+    flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+        gap: 60px;
+
+      background-image: url('../images/introduction_background.svg');
+      background-size: cover;
+    }
+
+    .intro-section p {
+      font-size: 32px;
+      max-width: 700px;
+      color: #000;
+      line-height: 1.6;
+      font-family: 'Simula';
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    .intro-section em {
+      font-style: italic;
+        font-weight: 500;
+    }
+
+    .pink { color: var(--pink); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .green { color: var(--green); }
+
+    .shop-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ff94e2;
+  color: #000;
+  font-weight: bold;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cartograph', monospace;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.shop-button:hover {
+  background-color: var(--green);
+  transform: scale(1.05);
+}
+
+.intro-section p span {
+  opacity: 1;
+  transition: color 0.5s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@media (max-width: 1125px) {
+    .intro-section {
+        /* height: 500px; */
+        padding: 80px;
+    }
+    .intro-section p {
+        font-size: 24px;
+        max-width: 70%;;
+    }
+    .shop-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .intro-section {
+      height: 650px;
+      width: 100%;
+      margin-bottom: 156px;
+      display: flex;
+    flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+        gap: 60px;
+
+      background-image: url('../images/introduction_background.svg');
+      background-size: cover;
+      background-size: auto;
+      background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 670px) {
+    .intro-section {
+        padding: 40px;
+        margin-bottom: 20px;
+
+    }
+    .intro-section p {
+        font-size: 16px;
+        max-width: 70%;;
+    }
+    .shop-button {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+
+    .intro-section {
+      height: 400px;
+      width: 100%;
+      margin-bottom: 156px;
+      display: flex;
+    flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+      background-image: url('../images/introduction_background.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+}
+
+
+
+/* ------------------ INSPO SECTION ------------------ */
+.inspo-section{
+    margin: auto;
+    margin-bottom: 156px;
+    width: 1335px;
+    height: 710px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.inspo-section h1{
+    font-size: 46px;
+    color: var(--dark-green);
+    font-family: 'Simula';
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.inspo-section h1 span{
+    color: var(--pink);
+    font-style: italic;
+}
+.inspo-tabs{
+    height: 620px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.inspo-tab{
+    display: flex;
+    width: 80px;
+    height: 100%;
+    justify-content: center;
+    padding: 40px 20px;
+    cursor: pointer;
+}
+.inspo-tab.active-tab {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.inspo-tab {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+.inspo-tab p{
+    transform: rotate(90deg) translateX(50%);
+    font-size: 20px;
+    font-family: 'Cartograph', monospace;
+    font-weight: bold;
+    white-space: nowrap;
+    width: fit-content;
+    height: fit-content;
+}
+#ininspo-tab-1, #ininspo-tab-5{
+    background-color: var(--orange);
+}
+#ininspo-tab-2{
+    background-color: var(--blue);
+}
+#ininspo-tab-3{
+    background-color: var(--pink);
+}
+#ininspo-tab-4{
+    background-color: var(--green);
+}
+.inspo-content-exp{
+    display: none;
+    width: 935px;
+    padding: 32px 22px;
+    align-items: center;
+}
+.visible {
+    display: flex;
+}
+.inspo-content-exp img{
+    width: 430px;
+    height: 495px;
+    margin-right: 22px;
+    object-fit: cover;
+}
+.inspo-content-exp .description{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cartograph', monospace;
+    color: #000;
+    width: 405px;
+    gap: 36px;
+}
+.inspo-content-exp .description h1{
+    font-size: 34px;
+    font-weight: 600;
+    color: #000;
+}
+.inspo-content-exp .description p{
+    font-size: 16px;
+    font-weight: 400;
+}
+.inspo-content-exp .description button{
+    border: none;
+    background-color: var(--orange);
+    padding: 16px 52px;
+    font-size: 16px;
+    font-weight: bold;
+    width: fit-content;
+    cursor: pointer;
+}
+#inspo-content-exp-1, #inspo-content-exp-5{
+    background-color: var(--transparent-orange);
+}
+#inspo-content-exp-2{
+    background-color: var(--transparent-blue);
+}
+#inspo-content-exp-2 button{
+    background-color: var(--blue);
+}
+#inspo-content-exp-3{
+    background-color: var(--transparent-pink);
+}
+#inspo-content-exp-3 button{
+    background-color: var(--pink);
+}
+#inspo-content-exp-4{
+    background-color: var(--transparent-green);
+}
+#inspo-content-exp-4 button{
+    background-color: var(--green);
+}
+
+@media (max-width: 1400px) {
+  .inspo-section{
+    margin: 0 auto;
+    margin-bottom: 156px;
+    width: 100%;
+    max-width: 950px;
+    height: fit-content;
+    padding: 0 20px;
+}
+.inspo-tabs{
+    height: fit-content;
+    flex-direction: column;
+}
+.inspo-tab{
+    width: 100%;
+    height: 80px;
+    padding: 28px 40px;
+}
+.inspo-tab p{
+    transform: none;
+}
+
+.inspo-content-exp{
+    display: none;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+.visible {
+    display: flex;
+}
+.inspo-content-exp img{
+    width: 350px;
+    height: 430px;
+    margin-right: 16px;
+}
+.inspo-content-exp .description{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cartograph', monospace;
+    color: #000;
+    max-width: 405px;
+    flex: 1;
+    gap: 36px;
+}
+.inspo-content-exp .description h1{
+  display: none;
+}
+.inspo-content-exp .description p{
+    font-size: 14px;
+}
+.inspo-content-exp .description button{
+    border: none;
+    background-color: var(--orange);
+    padding: 16px 52px;
+    font-size: 16px;
+    font-weight: bold;
+    width: fit-content;
+    cursor: pointer;
+}
+#inspo-content-exp-1, #inspo-content-exp-5{
+    background-color: var(--transparent-orange);
+}
+#inspo-content-exp-2{
+    background-color: var(--transparent-blue);
+}
+#inspo-content-exp-2 button{
+    background-color: var(--blue);
+}
+#inspo-content-exp-3{
+    background-color: var(--transparent-pink);
+}
+#inspo-content-exp-3 button{
+    background-color: var(--pink);
+}
+#inspo-content-exp-4{
+    background-color: var(--transparent-green);
+}
+#inspo-content-exp-4 button{
+    background-color: var(--green);
+}
+}
+
+@media (max-width: 670px) {
+    .inspo-section h1{
+        margin: 0 auto 20px;
+        font-size: 32px;
+    }
+    .inspo-tab p{
+        transform: none;
+    }
+    .inspo-content-exp{
+      flex-direction: column;
+      gap: 20px;
+    }
+    .inspo-content-exp img{
+        width: 80%;
+        height: auto;    
+      } 
+    .inspo-content-exp .description{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Cartograph', monospace;
+        color: #000;
+        max-width: 405px;
+        flex: 1;
+        gap: 36px;
+    }
+    .inspo-content-exp .description h1{
+      display: none;
+    }
+    .inspo-content-exp .description p{
+        font-size: 14px;
+    }
+    .inspo-content-exp .description button{
+        margin: auto;
+    }
+}

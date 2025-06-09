@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-DemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-DemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cartograph';
+  src: url('../fonts/Cartograph-main/CartographCF-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Simula';
+  src: url('../fonts/simula-wisabo/Simula.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

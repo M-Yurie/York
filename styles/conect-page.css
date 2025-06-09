@@ -1,0 +1,93 @@
+
+/* ----------------- LOG IN -----------------*/
+.login-box, 
+.create-account-box{
+    width: fit-content;
+    margin: 60px auto 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+h1{
+    font-family: Simula;
+    font-size: 38px;
+    font-weight: 300;
+}
+.log-in-alt{
+    display: flex;
+    gap: 32px;
+    width: fit-content;
+    margin-bottom: 14px;
+}
+.log-in-alt img{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.login-box #or-span{
+    font-family: 'Cartograph';
+    font-size: 14px;
+    font-weight: bold;
+}
+.container{
+    width: 420px;
+    height: 48px;
+    font-family: 'Cartograph';
+    font-size: 16;
+    font-weight: normal;
+    margin-top: 20px;
+    border: 1px solid black;
+    background-color: transparent;
+    padding: 0 20px;
+}
+input::placeholder{
+    font-family: 'Cartograph';
+    font-size: 16;
+    font-weight: normal;
+    color: black;
+}
+#password-alt{
+    font-family: 'Cartograph';
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 26px;
+    font-family: 'Cartograph';
+    font-size: 16;
+    font-weight: normal;
+    border: none;
+    margin: 44px 0;
+    cursor: pointer;
+}
+.sign-in,
+.next:hover{
+    background-color: var(--pink);
+}
+.next,
+.sign-in:hover{
+    background-color: var(--green);
+}
+.hidden{
+    display: none;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 44px;
+}
+.switcher{
+    width: 24px;
+    cursor: pointer;
+}

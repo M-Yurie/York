@@ -1,0 +1,168 @@
+.hidden {
+    display: none !important;
+}
+
+/* ------------------ PAGE TITLE ------------------ */
+.page-name{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--transparent-orange);
+    margin-top: 60px;
+}
+.page-name h1{
+    font-family: 'Cartograph';
+    font-size: 32px;
+    font-weight: 400;
+}
+@media (max-width: 770px){
+    .page-name h1{
+        font-size: 24px;
+    }
+    .page-name{
+        height: 100px;
+        margin-top: 30px;
+    }
+}
+
+
+/* ------------------ PRODUCTS CARDS ------------------ */
+.products-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    max-width: 1256px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0;
+    margin-bottom: 120px;
+}
+.card {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+.card-image {
+    height: 342px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    background-image: url(../images/products/image-1.jpg);
+    position: relative;
+}
+.card-image .favorite-icon{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+}
+.card-image .favorite-icon:hover{
+    background-color: var(--transparent-orange);
+    transition: background-color 0.2s ease-in-out;
+}
+.card-image .favorite-icon.active{
+    background-color: transparent;
+}
+.card-image .favorite-icon img{
+    width: 32;
+
+}
+.card-description{
+    width: 100%;
+    max-height: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "title title"
+        "price button";
+    background-color: var(--transparent-orange);
+    padding: 8px 12px;
+}
+.card-description p{
+    font-family: 'Cartograph';
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-area: title;
+}
+.card-description span{
+    font-family: 'Cartograph';
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    grid-area: price;
+    padding: 6px 0;
+}
+.card-description button{
+    font-family: 'Simula';
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--orange);
+    cursor: pointer;
+    grid-area: button;
+    padding: 6px 26px;
+    max-height: 35px;
+    width: fit-content;
+    white-space: nowrap;
+}
+.card-description button:hover{
+    background-color: var(--green);
+    transition: background-color 0.1s ease-in-out;
+    border: 1px solid var(--green);
+}
+@media (max-width: 1345px){
+.products-cards {
+    max-width: 934px;
+}
+.products-manipulation {
+    max-width: 934px;
+}
+}
+@media (min-width: 970px) and (max-width: 1040px){
+.products-cards {
+    max-width: 832px;
+    gap: auto;
+}
+.card {
+    width: 400px;
+}
+.card-image {
+    height: 472px;
+}
+.card-description{
+    min-height: 100px;
+}
+.card-description button{
+    max-height: 40px;
+    justify-self: end;
+}
+}
+@media (max-width: 970px){
+.products-cards {
+    max-width: 90%;
+    justify-content: space-between;
+}
+.card {
+    width: calc(94% / 2);
+}
+.card-image {
+    height: calc(90vw / 2 * 1.06);
+}
+}

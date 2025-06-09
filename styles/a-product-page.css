@@ -1,0 +1,246 @@
+.product-view {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto;
+    padding: 0 24px;
+    gap: 64px;
+    max-height: 1005;
+    margin-bottom: 220px;
+}
+
+/* --------------------- THE LEFT PART -------------------- */
+.product-view .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* max-width: 50%; */
+    height: fit-content;
+    width: 500px;
+    gap: 24px;
+}
+.product-view .left .main-image {
+    width: 100%;
+    height: 667px;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+.product-view .left .thumbnails {
+    display: flex;
+    gap: 8px;
+    overflow-x: hidden;
+    max-width: 570px;
+}
+.product-view .left .thumbnails img {
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.product-view .left .thumbnails img:hover,
+.product-view .left .thumbnails img.selected {
+    border: 4px solid var(--pink);
+}
+#arrow-left, #arrow-right {
+    display: flex;
+    background-color: var(--green);
+    padding: 16px;
+    max-width: 40px;
+    cursor: pointer;
+}
+.product-view .left .images-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+    position: relative;
+}
+.product-view .left .images-nav #arrow-left:hover,
+.product-view .left .images-nav #arrow-right:hover {
+    background-color: var(--pink);
+}
+.product-view .left .images-nav #arrow-left{
+    position: absolute;
+    left: 0;
+}
+.product-view .left .images-nav #arrow-right {
+    position: absolute;
+    right: 0;
+}
+
+/* --------------------- THE RIGHT PART -------------------- */
+.product-view .right {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-view .right h1 {
+    font-size: 36px;
+    font-family: 'Simula';
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.product-view .right .price {
+    font-size: 24px;
+    font-family: 'Cartograph';
+    margin-bottom: 4px;
+}
+.product-view .right .about-taxes {
+    font-size: 12px;
+    margin-bottom: 56px;
+    font-family: 'Cartograph';
+}
+.product-view .right .size-selection,
+.product-view .right .color-selection,
+.product-view .right .quantity-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 16px;
+    font-family: 'Cartograph';
+}
+.product-view .right .size-selection span,
+.product-view .right .color-selection span,
+.product-view .right .quantity-selection span {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.product-view .right .size-options,
+.product-view .right .color-options{
+    display: flex;
+    gap: 8px;
+}
+.product-view .right .size-options div{
+    padding: 14px 24px;
+    background-color: var(--transparent-orange);
+    font-size: 12px;
+    cursor: pointer;
+}
+.product-view .right .size-options div:hover {
+    background-color: var(--green);
+}
+.product-view .right .size-options div.selected {
+    background-color: var(--green);
+}
+.product-view .right .color-options {
+    display: flex;
+    gap: 14px;
+}
+.product-view .right .color-options div{
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: 4px solid var(--background-orange);
+    outline: 2px solid black;
+}
+.product-view .right .color-options div:hover {
+    border: 8px solid var(--background-orange);
+    outline: 2px solid black;
+}
+.product-view .right .color-options div.selected {
+    border: 8px solid var(--background-orange);
+    outline: 4px solid var(--pale-pink);
+}
+.product-view .right .quantity-selection .quantity-controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: fit-content;
+    background-color: var(--transparent-orange);
+    width: 120px;
+    height: 45px;
+}
+.product-view .right .quantity-selection .quantity-controls button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Cartograph';
+    height: 100%;
+    width: 35%;
+}
+.product-view .right .quantity-selection .quantity-controls div {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: 'Cartograph';
+}
+.add-to-cart,
+.wishlist-togle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    width: 205px;
+    height: 45px;
+    font-family: 'Cartograph';
+    font-size: 14px;
+    text-align: center;   
+    border: none;
+    cursor: pointer;
+}
+.add-to-cart {
+    background-color: var(--pale-pink);
+}
+.wishlist-togle {
+    background-color: var(--green);
+    position: relative;
+}
+.wishlist-togle img {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -30%);
+}
+
+/* ---------------------- THE DESCRIPTION -------------------- */
+.description {
+    width: 490px;
+    max-width: 500px;
+    margin-top: 100px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 40px 50px;
+    font-family: 'Cartograph';
+    font-size: 14px;
+    font-weight: normal;
+    background-color: var(--pale-pink);
+    justify-content: center;
+    align-items: center;
+}
+.description-tab {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+}
+.description .line {
+    width: 100%;
+    /* height: 1px;
+    background-color: black; */
+    border: 1px solid black;
+    margin: 0;
+}
+.hidden {
+    display: none;
+}
+
+/* @media screen {
+    .product-view .left,
+    .product-view .right{
+        transform: scale(0.9);
+    }
+} */

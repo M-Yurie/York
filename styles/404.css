@@ -1,0 +1,68 @@
+.not-found-main {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFEDE3;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.not-found-container {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px #e46a3c22;
+    max-width: 420px;
+    margin: 3rem auto;
+}
+
+.not-found-graphic {
+    margin-bottom: 1.5rem;
+}
+
+.not-found-404 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #E46A3C;
+    letter-spacing: 0.1em;
+    display: block;
+}
+
+.not-found-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+    font-family: inherit;
+}
+
+.not-found-message {
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.not-found-link {
+    color: #E46A3C;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.not-found-home-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 2.2rem;
+    background: #E46A3C;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+.not-found-home-btn:hover {
+    background: #c94e1a;
+}

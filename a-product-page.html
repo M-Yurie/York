@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>York</title>
+    <link rel="icon" href="icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/a-product-page.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+
+</head>
+<body>
+    <!-- announcement bar -->
+    <div class="announcement-bar">
+        <div class="left">
+            <a href="https://www.instagram.com/von_qota/" target="_blank"> <img src="icons/instagram_icon_green.svg" alt="instagram_icon_green" class="icon"> </a>          
+            <a href="https://www.tiktok.com/" target="_blank"> <img src="icons/tiktok_icon_green.svg" alt="tiktok_icon_green" class="icon"> </a>
+            <a href="https://t.me/M_Yurie" target="_blank"> <img src="icons/telegram_icon_green.svg" alt="telegram_icon_green" class="icon"> </a>
+        </div>
+        <div class="center">
+            <span>Free MD delivery over 50€</span>
+        </div>
+        <div class="right"></div>
+    </div>
+
+    <!-- header -->
+     <header>
+        <div class="header">
+            <div class="left">
+                <div class="menu-togle">☰</div>
+                <div class="search-button">
+                    <img src="icons/search_icon_orange.svg" alt="search_icon_orange">
+                    <span>Search...</span>
+                </div>            <div class="menu-options">
+                    <a href="products-page.html">Products</a>
+                    <a href="404.html">Instafashion</a>
+                </div>
+            </div>
+            <div class="center">
+                <a href="main-page.html"><img src="icons/LOGO.svg" alt="York"></a>
+            </div>
+            <div class="right">
+                <div class="menu-options">
+                    <a href="#">Guides</a>
+                    <a href="#">Stores</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="icons">
+                    <a href="favorites-page.html"><img src="icons/heart_icon_orange.svg" alt="heart_icon_orange"></a>
+                    <span id="shopbag-button"><img src="icons/shopbag_icon_orange.svg" alt="shopbag_icon_orange"></span>
+                    <a href="account-page.html" id="profile-link"><img src="icons/profile_icon_orange.svg" alt="profile_icon_orange"></a>                </div>
+            </div>
+        </div>
+        <div id="search-modal" class="search-modal hidden">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="What are you looking for?">
+                <button id="search-submit"></button>
+            </div>
+        </div>
+        <div id="menu-modal" class="menu-modal hidden">
+            <div class="menu-box">
+                <div class="menu-header">
+                    <span>Menu</span>
+                    <button id="menu-close-button">✕</button>
+                </div>
+                <div class="menu-content">
+                    <a href="products-page.html">Products</a>
+                    <a href="instafashion-page.html">Instafashion</a>
+                    <a href="#">Guides</a>
+                    <a href="#">Stores</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div id="cart-modal" class="cart-modal hidden">
+            <div class="cart-box">
+                <div class="cart-header">
+                    <span>Your cart</span>
+                    <button id="cart-close-button">✕</button>
+                </div>
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                    <p>Your shopping bag is empty.</p>
+                
+                </div>
+                <div class="cart-footer">
+                    <span class="flex"><span>Total: </span><span id="cart-total">0.00€</span></span>
+                    <button id="checkout-button">Checkout</button>
+                </div>
+            </div>
+        </div>
+     </header>
+
+    <main>
+        <section class="product-view">
+            <div class="left">
+                <div class="main-image"></div>
+                <div class="images-nav">
+                    <img src="icons/arrow-left.svg" id="arrow-left" alt="">
+                    <div class="thumbnails"></div>
+                    <img src="icons/arrow-right.svg" id="arrow-right" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <h1></h1>
+                    <span class="price">0.00€</span>
+                    <p class="about-taxes">TAXES INCLUDED. SHIPPING CALCULATED AT CHECKOUT.</p>
+                    <div class="size-selection">
+                        <span>Size:</span>
+                        <div class="size-options">
+                        </div>
+                    </div>
+                    <div class="color-selection">
+                        <span>Color:</span>
+                        <div class="color-options">
+                        </div>
+                    </div>
+                    <div class="quantity-selection">
+                        <span>Quantity:</span>
+                        <div class="quantity-controls">
+                            <button id="decrease-quantity">-</button>
+                            <div id="quantity-input">1</div>
+                            <button id="increase-quantity">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart">ADD TO CART</button>
+                    <button class="wishlist-togle">
+                        ADD TO WISHLIST
+                        <img src="icons/heart_icon_orange_filled.svg" alt="heart_icon_orange">
+                    </button>
+                </div>
+                <div class="description">
+                    <div class="description-tab" id="description-tab-1">
+                        <span>SIZE & FIT</span>
+                        <span>+</span>
+                    </div>
+                    <div class="description-content hidden" id="description-content-1">
+                        <p>Model is 6'2" and wears a size M.</p>
+                        <p>Fits true to size, take your normal size.</p>
+                        <p>Regular fit, designed to be worn with a looser fit.</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="description-tab" id="description-tab-2">
+                        <span>SHIPPING & DELIVERY</span>
+                        <span>+</span>
+                    </div>
+                    <div class="description-content hidden" id="description-content-2">
+                        <p>Free shipping on all orders over 50€.</p>
+                        <p>Standard delivery takes 3-5 business days.</p>
+                        <p>Express delivery available for an additional fee.</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="description-tab" id="description-tab-3">
+                        <span>RETURNS & EXCHANGES</span>
+                        <span>+</span>
+                    </div>
+                    <div class="description-content hidden" id="description-content-3">
+                        <p>Returns accepted within 30 days of purchase.</p>
+                        <p>Items must be unworn and in original packaging.</p>
+                        <p>Exchanges available for different sizes or colors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- footer section -->
+    <footer>
+        <div class="left">
+            <h5>Company</h5>
+            <a href="#">SHIPPING</a>
+            <a href="#">ENVIROMENTAL STATEMENT</a>
+            <a href="#">RETURNS & REFUNDS</a>
+            <a href="#">PRIVACY</a>
+            <a href="#">TERMS OF SERVICE</a>
+
+            <h5>Information</h5>
+            <a href="#">ABOUT US</a>
+            <a href="#">OUR LOCATIONS</a>
+        </div>
+        <div class="center">
+            <img src="icons/LOGO_big.svg" alt="">
+            <span>© 2025, YORK | DESIGN & WEBSITE CREDIT | DEVELOPMENT CREDIT</span>
+        </div>
+        <div class="right">
+            <a href="https://www.instagram.com/von_qota/" target="_blank"> <img src="icons/🦆 icon _instagram fill icon_.svg" alt="instagram_icon" class="icon"> </a>          
+            <a href="https://www.tiktok.com/" target="_blank"> <img src="icons/🦆 icon _tiktok_.svg" alt="tiktok_icon" class="icon"> </a>
+            <a href="https://t.me/M_Yurie" target="_blank"> <img src="icons/🦆 icon _telegram plane_.svg" alt="telegram_icon" class="icon"> </a>
+        </div>
+    </footer>
+
+    <script src="js/general.js"></script>
+    <script src="js/a-product-page.js"></script>
+</body>
