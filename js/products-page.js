@@ -75,17 +75,15 @@ let products = {
         'price': 14.02,
         'main-image': 'products/product-3/main.jpg',
         'images': [
-            'products/product-3/000000-1',
-            'products/product-3/000000-2',
-            'products/product-3/000000-3',
-            'products/product-3/000000-4',
-            'products/product-3/000000-5',
-            'products/product-3/000000-6',
-            'products/product-3/A8A8AA-1',
-            'products/product-3/A8A8AA-2',
-            'products/product-3/A8A8AA-3',
-            'products/product-3/A8A8AA-4',
-            'products/product-3/A8A8AA-5',
+            'products/product-3/000000-1.jpg',
+            'products/product-3/000000-2.jpg',
+            'products/product-3/000000-3.jpg',
+            'products/product-3/000000-4.jpg',
+            'products/product-3/000000-5.jpg',
+            'products/product-3/A8A8AA-1.jpg',
+            'products/product-3/A8A8AA-2.jpg',
+            'products/product-3/A8A8AA-3.jpg',
+            'products/product-3/A8A8AA-4.jpg',
         ],
         'stock': 6,
         'date-added': '2024-06-01',
@@ -106,7 +104,6 @@ let products = {
             'summer',
         ]
     },
-
 
     'product-4':{
         'id': 'p4',
