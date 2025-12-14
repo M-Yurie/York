@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let user = JSON.parse(localStorage.getItem('user') || '{}');
     if (!user || !user.email) {
-        window.location.href = 'conect-page.php';
+        window.location.href = 'auth/login.php';
         return;
     }
 

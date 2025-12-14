@@ -1,11 +1,19 @@
-// will be replaced by backend later (auth check will come from server)
-document.getElementById('profile-link').addEventListener('click', function(e) {
-    const user = localStorage.getItem('user');
-    if (!user) {
-        e.preventDefault();
-        window.location.href = 'conect-page.php';
-    }
-});
+const IS_LOGGED_IN = window.IS_LOGGED_IN === true;
+function redirectToLoginWithMessage() {
+    const params = new URLSearchParams();
+    params.set('flash', 'Please log in to use favorites and cart.');
+    window.location.href = 'conect-page.php?' + params.toString();
+}
+
+const profileLink = document.getElementById('profile-link');
+if (profileLink) {
+    profileLink.addEventListener('click', function(e) {
+        if (!IS_LOGGED_IN) {
+            e.preventDefault();
+            redirectToLoginWithMessage();
+        }
+    });
+}
 
 // header
 let lastScrollY = window.scrollY;

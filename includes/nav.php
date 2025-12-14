@@ -1,3 +1,13 @@
+<?php
+require_once __DIR__ . '/auth.php';
+$currentUser = current_user();
+$csrfToken = csrf_token();
+?>
+<script>
+    window.IS_LOGGED_IN = <?php echo $currentUser ? 'true' : 'false'; ?>;
+    window.CSRF_TOKEN = "<?php echo htmlspecialchars($csrfToken); ?>";
+    window.FLASH_LOGIN_MESSAGE = "Please log in to use favorites and cart.";
+</script>
     <!-- announcement bar -->
     <div class="announcement-bar">
         <div class="left">
@@ -36,7 +46,17 @@
                 <div class="icons">
                     <a href="favorites-page.php"><img src="icons/heart_icon_orange.svg" alt="heart_icon_orange"></a>
                     <span id="shopbag-button"><img src="icons/shopbag_icon_orange.svg" alt="shopbag_icon_orange"></span>
-                    <a href="account-page.php" id="profile-link"><img src="icons/profile_icon_orange.svg" alt="profile_icon_orange"></a>                </div>
+                    <?php if ($currentUser): ?>
+                        <a href="account-page.php" id="profile-link"><img src="icons/profile_icon_orange.svg" alt="profile_icon_orange"></a>
+                        <?php if (!empty($currentUser['role']) && $currentUser['role'] === 'admin'): ?>
+                            <a href="/admin/index.php" class="admin-link">Admin</a>
+                        <?php endif; ?>
+                        <a href="auth/logout.php" class="logout-link">Logout</a>
+                    <?php else: ?>
+                        <a href="auth/login.php" class="login-link">Login</a>
+                        <a href="auth/register.php" class="register-link">Register</a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
         <div id="search-modal" class="search-modal hidden">

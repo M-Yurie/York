@@ -1,4 +1,7 @@
 <?php
+require 'includes/bootstrap.php';
+require_once 'includes/auth.php';
+require_auth();
 $pageTitle = 'York | Favorites';
 $pageStyles = ['styles/general.css', 'styles/favorites-page.css', 'styles/fonts.css'];
 $pageScripts = ['js/favorites-page.js', 'js/general.js'];

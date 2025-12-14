@@ -1,8 +1,6 @@
-// will be replaced by backend later (product details should come from server)
-const product = JSON.parse(localStorage.getItem('selectedProduct'));
-console.log(product);
+const product = window.productData;
 if (!product) {
-  history.go(-1);
+  window.location.href = '404.php';
 }
 const productView = document.querySelector('.product-view');
 productView.querySelector('.main-image').style.backgroundImage = `url(../${product["main-image"]})`;

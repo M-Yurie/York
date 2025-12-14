@@ -1,4 +1,35 @@
 <?php
+require 'includes/bootstrap.php';
+
+$pdo = db();
+$productId = $_GET['id'] ?? null;
+if (!$productId) {
+    header('Location: /404.php');
+    exit;
+}
+
+$stmt = $pdo->prepare('SELECT p.*, c.slug AS category_slug FROM products p LEFT JOIN categories c ON p.category_id = c.id WHERE p.id = ? LIMIT 1');
+$stmt->execute([$productId]);
+$productRow = $stmt->fetch();
+if (!$productRow) {
+    header('Location: /404.php');
+    exit;
+}
+
+$productData = [
+    'id' => (string)$productRow['id'],
+    'name' => $productRow['name'],
+    'price' => (float)$productRow['price'],
+    'description' => $productRow['description'] ?? '',
+    'main-image' => $productRow['main_image'] ?? '',
+    'images' => array_values(array_filter([$productRow['main_image']])),
+    'size' => [],
+    'color' => [],
+    'rating' => 0,
+    'date-added' => substr((string)($productRow['created_at'] ?? ''), 0, 10),
+    'type' => $productRow['category_slug'] ?? 'all',
+];
+
 $pageTitle = 'York | Product';
 $pageStyles = ['styles/general.css', 'styles/a-product-page.css', 'styles/fonts.css'];
 $pageScripts = ['js/general.js', 'js/a-product-page.js'];
@@ -77,9 +108,11 @@ require 'includes/header.php';
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
     </main>
     
-    
+    <script>
+        window.productData = <?php echo json_encode($productData, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?>;
+    </script>
 
 <?php require 'includes/footer.php'; ?>

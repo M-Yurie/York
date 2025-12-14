@@ -1,4 +1,49 @@
 <?php
+require 'includes/bootstrap.php';
+$pdo = db();
+
+$page = max(1, (int)($_GET['page'] ?? 1));
+$perPage = 12;
+$offset = ($page - 1) * $perPage;
+
+$totalProducts = 0;
+try {
+    $stmt = $pdo->query('SELECT COUNT(*) FROM products');
+    $totalProducts = (int)$stmt->fetchColumn();
+} catch (Exception $e) {
+    $totalProducts = 0;
+}
+
+$products = [];
+try {
+    $stmt = $pdo->prepare('SELECT p.*, c.slug AS category_slug FROM products p LEFT JOIN categories c ON p.category_id = c.id ORDER BY p.created_at DESC LIMIT :limit OFFSET :offset');
+    $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
+    $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+    $stmt->execute();
+    $products = $stmt->fetchAll();
+} catch (Exception $e) {
+    $products = [];
+}
+
+$productsForJs = [];
+foreach ($products as $p) {
+    $productsForJs['product-' . $p['id']] = [
+        'id' => (string)$p['id'],
+        'name' => $p['name'],
+        'type' => $p['category_slug'] ?? 'all',
+        'size' => [],
+        'price' => (float)$p['price'],
+        'main-image' => $p['main_image'] ?? '',
+        'images' => array_values(array_filter([$p['main_image']])),
+        'stock' => 0,
+        'date-added' => substr((string)($p['created_at'] ?? ''), 0, 10),
+        'color' => [],
+        'rating' => 0,
+        'tags' => []
+    ];
+}
+
+$totalPages = $perPage > 0 ? max(1, (int)ceil($totalProducts / $perPage)) : 1;
 $pageTitle = 'York | Products';
 $pageStyles = ['styles/general.css', 'styles/products-page.css', 'styles/fonts.css'];
 $pageScripts = ['js/products-page.js', 'js/general.js'];
@@ -77,6 +122,22 @@ require 'includes/header.php';
      </div>
     </main>
     
-    
+    <div style="padding:1rem 2rem;">
+        <?php if ($totalPages > 1): ?>
+            <div style="display:flex;gap:0.5rem;align-items:center;">
+                <?php if ($page > 1): ?>
+                    <a href="products-page.php?page=<?php echo $page - 1; ?>" style="padding:0.4rem 0.8rem; border:1px solid #ccc;">Prev</a>
+                <?php endif; ?>
+                <span>Page <?php echo $page; ?> of <?php echo $totalPages; ?></span>
+                <?php if ($page < $totalPages): ?>
+                    <a href="products-page.php?page=<?php echo $page + 1; ?>" style="padding:0.4rem 0.8rem; border:1px solid #ccc;">Next</a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <script>
+        window.productsData = <?php echo json_encode($productsForJs, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?>;
+    </script>
 
 <?php require 'includes/footer.php'; ?>

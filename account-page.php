@@ -1,9 +1,11 @@
 <?php
+require 'includes/bootstrap.php';
+require_once 'includes/auth.php';
 $pageTitle = 'York | Account';
 $pageStyles = ['styles/general.css', 'styles/account-page.css', 'styles/fonts.css'];
 $pageScripts = ['js/account-page.js', 'js/general.js'];
 require 'includes/header.php';
-$currentUser = null; // placeholder for future auth logic (login/register)
+$currentUser = require_auth();
 ?>
 <?php require 'includes/nav.php'; ?>
 
@@ -27,7 +29,7 @@ $currentUser = null; // placeholder for future auth logic (login/register)
                             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2" alt="Profile Picture">
                         </div>
                         <div class="profile-info">
-                            <div><b>NAME:</b> Yurie Musteata</div>
+                            <div><b>NAME:</b> <?php echo htmlspecialchars($currentUser['name'] ?? ''); ?></div>
                             <div><b>BIRTHDATE:</b> 15 jan 2007</div>
                             <div><b>PREFERRED GENDER:</b> Any</div>
                             <button class="edit-btn">EDIT</button>
@@ -38,7 +40,7 @@ $currentUser = null; // placeholder for future auth logic (login/register)
                         <div class="login-info">
                             <div class="login-row">
                                 <span class="login-label">EMAIL</span>
-                                <span class="login-value">musteataiurie13@gmail.com</span>
+                                <span class="login-value"><?php echo htmlspecialchars($currentUser['email'] ?? ''); ?></span>
                                 <button class="edit-btn">EDIT</button>
                             </div>
                             <div class="login-row">

@@ -1,4 +1,5 @@
 <?php
+require 'includes/bootstrap.php';
 $pageTitle = 'York | 404';
 $pageStyles = ['styles/general.css', 'styles/404.css', 'styles/fonts.css'];
 $pageScripts = ['js/general.js'];
