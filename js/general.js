@@ -1,9 +1,9 @@
-// conectarea
+// will be replaced by backend later (auth check will come from server)
 document.getElementById('profile-link').addEventListener('click', function(e) {
     const user = localStorage.getItem('user');
     if (!user) {
         e.preventDefault();
-        window.location.href = 'conect-page.html';
+        window.location.href = 'conect-page.php';
     }
 });
 
@@ -80,7 +80,7 @@ menuModal.addEventListener('click', (e) => {
     }
 });
 
-// cosul
+// frontend-only (cart stored in localStorage on client)
 const cartButton = document.getElementById('shopbag-button');
 const cartModal = document.getElementById('cart-modal');
 const cartCloseButton = document.getElementById('cart-close-button');
@@ -219,7 +219,7 @@ searchSubmit.addEventListener('click', () => {
     const query = searchInput.value.trim();
     if (query) {
         localStorage.setItem('searchQuery', query);
-        window.location.href = `products-page.html?search=${encodeURIComponent(query)}`;
+        window.location.href = `products-page.php?search=${encodeURIComponent(query)}`;
     }
 });
 

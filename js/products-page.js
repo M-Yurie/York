@@ -1,5 +1,5 @@
 localStorage.setItem('selectedProductId', 'product-1');
-// product cards
+// will be replaced by backend later (products data will come from server)
 let products = {
     'product-1': {
         'id': 'p1',
@@ -557,7 +557,7 @@ function createProductCard(product) {
     addButton.textContent = 'Add to cart';
     addButton.addEventListener('click', () => {
         localStorage.setItem('selectedProduct', JSON.stringify(product));
-        window.location.href = 'a-product-page.html';
+        window.location.href = 'a-product-page.php';
     });
 
     cardDesc.appendChild(namePara);
@@ -571,6 +571,7 @@ function createProductCard(product) {
 }
 
 
+// frontend-only (favorites saved in localStorage)
 function renderProductCards() {
     const container = document.querySelector('.products-cards');
     if (!container) return;
@@ -584,4 +585,3 @@ function renderProductCards() {
 document.addEventListener('DOMContentLoaded', () => {
     renderProductCards();
 });
-

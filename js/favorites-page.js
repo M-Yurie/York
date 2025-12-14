@@ -1,3 +1,4 @@
+// frontend-only favorites (localStorage)
 localStorage.setItem('selectedProductId', 'product-1');
 
 //pentru favorite
@@ -84,7 +85,7 @@ function createProductCard(product) {
     addButton.textContent = 'Add to cart';
     addButton.addEventListener('click', () => {
         localStorage.setItem('selectedProduct', JSON.stringify(product));
-        window.location.href = 'a-product-page.html';
+        window.location.href = 'a-product-page.php';
     });
 
     cardDesc.appendChild(namePara);

@@ -1,3 +1,4 @@
+// will be replaced by backend later (product details should come from server)
 const product = JSON.parse(localStorage.getItem('selectedProduct'));
 console.log(product);
 if (!product) {
@@ -107,7 +108,7 @@ increaseBtn.addEventListener('click', () => {
 });
 }
 
-// wishli1st toggle
+// frontend-only wishlist toggle (localStorage favorites)
 // ...existing code...
 
 // Helpers pentru favorites
@@ -209,4 +210,3 @@ tabs.forEach((tab, index) => {
     tab.querySelector('span:last-child').textContent = contents[index].classList.contains('hidden') ? '+' : '-';
   });
 });
-

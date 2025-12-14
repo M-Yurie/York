@@ -1,3 +1,4 @@
+// will be replaced by backend later (login/register handled server-side)
 document.addEventListener('DOMContentLoaded', () => {
     const loginBox = document.querySelector('.login-box');
     const createBox = document.querySelector('.create-account-box');
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         localStorage.setItem('user', JSON.stringify({ email }));
-        window.location.href = 'account-page.html';
+        window.location.href = 'account-page.php';
     });
 
     document.querySelector('.create-account-box .next').addEventListener('click', () => {
@@ -39,6 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         localStorage.setItem('user', JSON.stringify({ name, email }));
-        window.location.href = 'account-page.html';
+        window.location.href = 'account-page.php';
     });
 });

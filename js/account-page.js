@@ -1,7 +1,8 @@
+// will be replaced by backend later (user data will come from server-side auth)
 document.addEventListener('DOMContentLoaded', () => {
     let user = JSON.parse(localStorage.getItem('user') || '{}');
     if (!user || !user.email) {
-        window.location.href = 'conect-page.html';
+        window.location.href = 'conect-page.php';
         return;
     }
 
